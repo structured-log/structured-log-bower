@@ -167,8 +167,8 @@ Either of these options can be omitted and be set to default values.
 The queue of batched logs can be flushed at any time by calling the *flush* function.
 
 If it suits your purpose you can simply call flush:
-
-  log.flush();
+	
+	log.flush();
 
 If you need a callback when the flush has completed you have two options.
 
@@ -348,6 +348,18 @@ Enrichment can be used to add key/value properties to all logs output via a part
 		.enrich({
 			UserId: getCurUserId(),
 			SessionId: getCurSessionId(),
+		})
+		.writeTo(consoleSink())
+		.createLogger();
+
+A function can also be provided that is evaluated at runtime to attach properties to log events in a more dynamic fashion:
+
+	var log = structuredLog.configuration()
+		.enrich(function () {
+			return {
+				UserId: getCurUserId(),
+				SessionId: getCurSessionId(),		
+			};
 		})
 		.writeTo(consoleSink())
 		.createLogger();
