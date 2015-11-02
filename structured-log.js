@@ -1476,9 +1476,15 @@ process.chdir = function (dir) {
 }).call(this,require("ngpmcQ"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/console-sink.js","/")
 },{"buffer":1,"ngpmcQ":4}],6:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
-var structuredLog = require("../core/structured-log.js");
-structuredLog.consoleSink = require("./console-sink.js");
-}).call(this,require("ngpmcQ"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_3aa0b5ef.js","/")
+(function () {
+
+	window.structuredLog = require("../core/structured-log.js");
+	window.structuredLog.consoleSink = require("./console-sink.js");
+
+})();
+
+
+}).call(this,require("ngpmcQ"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_e8bd2923.js","/")
 },{"../core/structured-log.js":7,"./console-sink.js":5,"buffer":1,"ngpmcQ":4}],7:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 // Copyright 2014 Serilog Contributors
